@@ -41,8 +41,7 @@ This project was developed by the Headstarter AI Software Engineering Fellowship
 
 - **Yashvi**
 - **Akshat**
-- **Vikrant**
-- **Rishi**
+- **Punit**
 
 Special thanks to the Headstarter AI community for their support and inspiration.
 
