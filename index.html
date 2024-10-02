@@ -84,9 +84,9 @@
       margin-bottom: 2rem;
     }
 
-    .bento-grid {
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       padding: 0 2rem;
     }
@@ -95,14 +95,24 @@
       background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
       border-radius: 10px;
       padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
       color: #ffffff;
       text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .feature-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .long-feature {
+      grid-column: span 1; /* For vertical long item */
+      grid-row: span 2; /* Spanning two rows */
+    }
+
+    .wide-feature {
+      grid-column: span 2; /* For horizontal long item */
+      grid-row: span 1; /* Spanning one row */
     }
 
     .footer {
@@ -113,6 +123,17 @@
 
     .footer-content {
       color: #e0e0e0;
+    }
+
+    /* Image placeholder */
+    .image-placeholder {
+      background-color: #2e2e2e; /* Dark background */
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      height: 100%; /* Full height of the grid item */
     }
   </style>
 </head>
@@ -137,12 +158,12 @@
 
   <section class="features-section">
     <h2 class="features-title">Key Features</h2>
-    <div class="bento-grid">
-      <div class="feature-item">
+    <div class="features-grid">
+      <div class="feature-item long-feature">
         <h3>User-Friendly Experience</h3>
         <p>Craft your resume effortlessly with our intuitive builder—no design expertise required.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-item wide-feature">
         <h3>Standout Templates</h3>
         <p>Select from a range of sleek, ATS-optimized templates that catch recruiters' eyes.</p>
       </div>
@@ -153,6 +174,9 @@
       <div class="feature-item">
         <h3>Land Your Dream Job</h3>
         <p>Enhance your chances with a resume that truly makes you shine.</p>
+      </div>
+      <div class="image-placeholder">
+        <p>Image Placeholder</p> <!-- Placeholder for image -->
       </div>
     </div>
   </section>
