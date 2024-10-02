@@ -5,185 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ResumeCraft</title>
   <link rel="stylesheet" href="assets/css/resume.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #121212;
+      color: #ffffff;
+      transition: background-color 0.5s ease;
     }
 
     .navbar {
-      background-color: #2c3e50;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
+      background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
-    .navbar .topbar {
-      font-size: 24px;
+    .topbar {
+      font-size: 2rem;
+      color: #00ffcc;
       font-weight: bold;
+      text-align: center;
+      transition: color 0.3s;
     }
 
     .header {
-      background: linear-gradient(to right, #2980b9, #6dd5ed);
-      color: white;
-      padding: 60px 20px;
+      padding: 5rem 0;
       text-align: center;
+      background: linear-gradient(135deg, #0077ff, #00ccff);
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      margin: 1rem;
+      transition: transform 0.3s;
     }
 
-    .header h1 {
-      font-size: 36px;
+    .header:hover {
+      transform: translateY(-5px);
+    }
+
+    .lg-title {
+      font-size: 3rem;
+      color: #ffffff;
+    }
+
+    .text2 {
+      font-size: 1.2rem;
+      color: #e0e0e0;
     }
 
     .choose-template-button {
-      background-color: #27ae60;
+      background-color: #ff007f;
       color: white;
-      border: none;
       padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+      border: none;
       border-radius: 5px;
-      margin-top: 20px;
-      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .choose-template-button:hover {
+      background-color: #ff66b2;
+      transform: scale(1.05);
     }
 
     .section-bento {
-      padding: 40px 20px;
-      background-color: #ecf0f1;
+      padding: 3rem 0;
     }
 
     .bento-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
     }
 
     .bento-item {
-      background-color: white;
-      padding: 20px;
+      background: #1e1e1e;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .bento-item:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
     .bento-title {
-      font-size: 20px;
-      color: #2980b9;
+      font-size: 1.5rem;
+      color: #00ffcc;
+      margin-bottom: 1rem;
     }
 
     .footer {
-      background-color: #2c3e50;
-      color: white;
+      background-color: #1e1e1e;
+      padding: 2rem;
       text-align: center;
-      padding: 15px 0;
     }
 
-    .carousel {
-      margin: 20px 0;
-      position: relative;
+    .footer-content {
+      color: #e0e0e0;
     }
 
-    .carousel-item {
-      display: none;
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
+    /* About Section */
+    .about-section {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #2e2e2e, #1e1e1e);
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin: 2rem 0;
     }
 
-    .carousel-item.active {
-      display: block;
+    .about-title {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin-bottom: 1rem;
     }
 
-    .carousel-button {
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin: 5px;
+    .about-text {
+      color: #e0e0e0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 3rem 0;
+    }
+
+    .features-title {
+      font-size: 2rem;
+      color: #00ffcc;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .feature-item {
+      background: #2e2e2e;
+      border-radius: 10px;
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <div class="topbar">ResumeCraft</div>
+    <div class="container">
+      <div class="topbar">ResumeCraft</div>
+    </div>
   </nav>
-  <header class="header">
-    <h1 class="lg-title">Build Your Resume</h1>
-    <p class="text2 fs-18">With templates all having an ATS score of more than 90%</p>
-    <button class="choose-template-button"><a href="template.html" style="color: white; text-decoration: none;">Choose My Template</a></button>
+  <header class="header bg-gradient" id="header">
+    <div class="container text-center">
+      <h1 class="lg-title">Build Your Resume</h1>
+      <p class="text2">With templates all having an ATS score of more than 90%</p>
+      <button class="choose-template-button"><a href="template.html" style="color: white; text-decoration: none;">Choose My Template</a></button>
+    </div>
   </header>
+
+  <section class="about-section">
+    <div class="container text-center">
+      <h2 class="about-title">About ResumeCraft</h2>
+      <p class="about-text">ResumeCraft is designed to help you create an impressive resume effortlessly. Our user-friendly interface allows anyone to build a standout resume, tailored to their unique career journey. With our selection of modern templates and expert tips, you can craft a resume that opens doors to your dream job.</p>
+    </div>
+  </section>
+
   <main>
-    <section class="section-bento">
+    <section class="features-section">
+      <h2 class="features-title">Key Features</h2>
       <div class="container">
         <div class="bento-grid">
-          <div class="bento-item">
-            <h2 class="bento-title">User-Friendly Experience</h2>
+          <div class="feature-item">
+            <h3 class="bento-title">User-Friendly Experience</h3>
             <p class="text">Craft your resume effortlessly with our intuitive builder—no design expertise required.</p>
           </div>
-          <div class="bento-item">
-            <h2 class="bento-title">Standout Templates</h2>
+          <div class="feature-item">
+            <h3 class="bento-title">Standout Templates</h3>
             <p class="text">Select from a range of sleek, ATS-optimized templates that catch recruiters' eyes.</p>
           </div>
-          <div class="bento-item">
-            <h2 class="bento-title">Tailor to Perfection</h2>
+          <div class="feature-item">
+            <h3 class="bento-title">Tailor to Perfection</h3>
             <p class="text">Customize every detail to reflect your career journey and future ambitions.</p>
           </div>
-          <div class="bento-item">
-            <h2 class="bento-title">Land Your Dream Job</h2>
+          <div class="feature-item">
+            <h3 class="bento-title">Land Your Dream Job</h3>
             <p class="text">Enhance your chances with a resume that truly makes you shine.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Carousel Section -->
-    <section class="carousel">
-      <h2>About ResumeCraft</h2>
-      <div class="carousel-item active">
-        <p>ResumeCraft is your ultimate solution for creating professional resumes that stand out.</p>
-      </div>
-      <div class="carousel-item">
-        <p>Our templates are designed with ATS optimization in mind, ensuring your resume gets seen.</p>
-      </div>
-      <div class="carousel-item">
-        <p>Join thousands of satisfied users who landed their dream jobs with ResumeCraft!</p>
-      </div>
-      <button class="carousel-button" onclick="prevSlide()">❮ Prev</button>
-      <button class="carousel-button" onclick="nextSlide()">Next ❯</button>
-    </section>
   </main>
-  <footer class="footer">
-    <p class="footer-content">© 2024 ResumeCraft. All rights reserved.</p>
+
+  <footer class="footer bg-dark">
+    <div class="container text-center">
+      <p class="footer-content">© 2024 ResumeCraft. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKXP7Z3ZT5"></script>
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MKXP7Z3ZT5');
   </script>
 </body>
 </html>
