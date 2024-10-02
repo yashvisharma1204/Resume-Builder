@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Resume-1</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- custom css -->
+    <title>Techy Resume Builder</title>
+    <meta name="description" content="A modern resume builder for fresh graduates">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <section id="preview-sc" class="print_area">
         <div class="container">
             <div class="header">
-                <div class="preview-item preview-item-name">
-                    <h1 class="preview-item-val fw-6" id="fullname_dsp">Ryan Peterson</h1>
-                </div>
-                <div class="preview-item">
-                    <span class="preview-item-val text-uppercase fw-6 ls-1" id="designation_dsp">Business Analyst</span>
-                </div>
+                <h1 class="name" id="fullname_dsp">Ryan Peterson</h1>
+                <h2 class="designation" id="designation_dsp">Business Analyst</h2>
                 <p class="contact-info" id="contact_dsp">
-                    <span id="phone_dsp">+1 202-555-0161</span> |
-                    <span id="email_dsp">sample@websder.com</span> |
-                    <span id="website_dsp">www.websder.com</span> |
-                    <span id="location_dsp">New York, NY</span>
+                    <i class="fas fa-phone-alt"></i> <span id="phone_dsp">+1 202-555-0161</span> |
+                    <i class="fas fa-envelope"></i> <span id="email_dsp">sample@websder.com</span> |
+                    <i class="fas fa-globe"></i> <span id="website_dsp">www.websder.com</span> |
+                    <i class="fas fa-map-marker-alt"></i> <span id="location_dsp">New York, NY</span>
                 </p>
             </div>
             <hr>
@@ -31,7 +29,7 @@
                 <h2>Experience</h2>
                 <div class="job">
                     <h3>Marketing Business Analyst, Project Solutions <span>01/2015 - Present</span></h3>
-                    <p>Successfully coordinated...</p>
+                    <p>Successfully coordinated projects, improved marketing strategies, and delivered measurable results...</p>
                 </div>
             </div>
             <hr>
@@ -52,18 +50,18 @@
             <div class="skills" id="skills_dsp">
                 <h2>Skills</h2>
                 <ul>
-                    <li>Analytical Skills</li>
-                    <li>Communication</li>
-                    <li>Teamwork</li>
+                    <li><i class="fas fa-check"></i> Analytical Skills</li>
+                    <li><i class="fas fa-check"></i> Communication</li>
+                    <li><i class="fas fa-check"></i> Teamwork</li>
                 </ul>
             </div>
             <hr>
             <div class="languages" id="languages_dsp">
                 <h2>Languages</h2>
                 <ul>
-                    <li>English</li>
-                    <li>Spanish</li>
-                    <li>French</li>
+                    <li><i class="fas fa-language"></i> English</li>
+                    <li><i class="fas fa-language"></i> Spanish</li>
+                    <li><i class="fas fa-language"></i> French</li>
                 </ul>
             </div>
         </div>
@@ -79,11 +77,13 @@
                 <input type="text" id="designation" name="designation" required placeholder="Business Analyst">
 
                 <label for="contact">Contact Info:</label>
-                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-                <input type="text" id="address" name="address" placeholder="Address" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="text" id="website" name="website" placeholder="Website" required>
-                <input type="text" id="location" name="location" placeholder="Location" required>
+                <div class="contact-inputs">
+                    <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="text" id="website" name="website" placeholder="Website" required>
+                    <input type="text" id="location" name="location" placeholder="Location" required>
+                </div>
 
                 <label for="experience">Experience:</label>
                 <div id="experience-section">
@@ -153,11 +153,11 @@
         </div>
     </section>
 
-    <!-- jquery cdn -->
+    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-    <!-- custom js -->
+    <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
-    <!-- app js -->
+    <!-- App JS -->
     <script src="assets/js/app.js"></script>
 </body>
 </html>
