@@ -11,15 +11,18 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #000000; /* Black background */
+      background-color: #121212;
       color: #ffffff;
-      transition: background-color 0.5s ease;
     }
 
     .navbar {
-      background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
       padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: none;
     }
 
     .topbar {
@@ -27,57 +30,58 @@
       color: #00ffcc;
       font-weight: bold;
       text-align: center;
-      transition: color 0.3s;
     }
 
     .header {
-      padding: 5rem 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('your-background-image.jpg') no-repeat center center/cover; /* Add your background image */
+      position: relative;
+    }
+
+    .header h1 {
+      color: #00ffcc;
+      font-size: 4rem;
       text-align: center;
-      background: linear-gradient(135deg, #000000, #1e1e1e); /* Dark gradient */
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-      margin: 1rem;
-      transition: transform 0.3s;
-    }
-
-    .header:hover {
-      transform: translateY(-5px);
-    }
-
-    .lg-title {
-      font-size: 3rem;
-      color: #ffffff;
-      background: linear-gradient(135deg, #9a4efc, #4c6ef5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
     }
 
-    .text2 {
+    .about-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem;
+      background: white;
+      color: #121212;
+      border-radius: 10px;
+      margin: 2rem;
+    }
+
+    .about-text {
+      flex: 1;
+      padding: 1rem;
       font-size: 1.2rem;
-      color: #e0e0e0;
-      background: linear-gradient(135deg, #9a4efc, #4c6ef5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      line-height: 1.6;
     }
 
-    .choose-template-button {
-      background-color: #ff007f;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
+    .about-image {
+      flex: 1;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
-    .choose-template-button:hover {
-      background-color: #ff66b2;
-      transform: scale(1.05);
-    }
-
-    .section-bento {
+    .features-section {
       padding: 3rem 0;
+    }
+
+    .features-title {
+      font-size: 2rem;
+      color: #00ffcc;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .bento-grid {
@@ -87,24 +91,18 @@
       padding: 0 2rem;
     }
 
-    .bento-item {
-      background: linear-gradient(135deg, #000000, #1e1e1e); /* Dark gradient */
+    .feature-item {
+      background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
       border-radius: 10px;
       padding: 2rem;
-      text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      text-align: center;
     }
 
-    .bento-item:hover {
+    .feature-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    }
-
-    .bento-title {
-      font-size: 1.5rem;
-      color: #00ffcc; /* Purplish/blueish color */
-      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
 
     .footer {
@@ -116,51 +114,6 @@
     .footer-content {
       color: #e0e0e0;
     }
-
-    /* About Section */
-    .about-section {
-      padding: 3rem 0;
-      background: linear-gradient(135deg, #1e1e1e, #000000); /* Dark gradient */
-      border-radius: 10px;
-      margin: 2rem 0;
-    }
-
-    .about-title {
-      font-size: 2rem;
-      color: #00ffcc; /* Purplish/blueish color */
-      margin-bottom: 1rem;
-    }
-
-    .about-text {
-      color: #ffffff; /* White text */
-      font-size: 1.1rem;
-      line-height: 1.6;
-      padding: 0 1rem;
-    }
-
-    /* Features Section */
-    .features-section {
-      padding: 3rem 0;
-    }
-
-    .features-title {
-      font-size: 2rem;
-      color: #00ffcc; /* Purplish/blueish color */
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .feature-item {
-      background: linear-gradient(135deg, #1e1e1e, #000000); /* Dark gradient */
-      border-radius: 10px;
-      padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
   </style>
 </head>
 <body>
@@ -169,59 +122,44 @@
       <div class="topbar">ResumeCraft</div>
     </div>
   </nav>
-  <header class="header bg-gradient" id="header">
-    <div class="container text-center">
-      <h1 class="lg-title">Build Your Resume</h1>
-      <p class="text2">With templates all having an ATS score of more than 90%</p>
-      <button class="choose-template-button"><a href="template.html" style="color: white; text-decoration: none;">Choose My Template</a></button>
-    </div>
+
+  <header class="header">
+    <h1>ResumeCraft</h1>
   </header>
 
   <section class="about-section">
-    <div class="container text-center">
-      <h2 class="about-title">About ResumeCraft</h2>
-      <p class="about-text">ResumeCraft is designed to help you create an impressive resume effortlessly. Our user-friendly interface allows anyone to build a standout resume, tailored to their unique career journey. With our selection of modern templates and expert tips, you can craft a resume that opens doors to your dream job.</p>
+    <div class="about-text">
+      <h2>About ResumeCraft</h2>
+      <p>ResumeCraft is designed to help you create an impressive resume effortlessly. Our user-friendly interface allows anyone to build a standout resume, tailored to their unique career journey. With our selection of modern templates and expert tips, you can craft a resume that opens doors to your dream job.</p>
+    </div>
+    <img src="your-image.jpg" alt="About ResumeCraft" class="about-image"> <!-- Replace with your image -->
+  </section>
+
+  <section class="features-section">
+    <h2 class="features-title">Key Features</h2>
+    <div class="bento-grid">
+      <div class="feature-item">
+        <h3>User-Friendly Experience</h3>
+        <p>Craft your resume effortlessly with our intuitive builder—no design expertise required.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Standout Templates</h3>
+        <p>Select from a range of sleek, ATS-optimized templates that catch recruiters' eyes.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Tailor to Perfection</h3>
+        <p>Customize every detail to reflect your career journey and future ambitions.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Land Your Dream Job</h3>
+        <p>Enhance your chances with a resume that truly makes you shine.</p>
+      </div>
     </div>
   </section>
 
-  <main>
-    <section class="features-section">
-      <h2 class="features-title">Key Features</h2>
-      <div class="container">
-        <div class="bento-grid">
-          <div class="feature-item">
-            <h3 class="bento-title">User-Friendly Experience</h3>
-            <p class="text">Craft your resume effortlessly with our intuitive builder—no design expertise required.</p>
-          </div>
-          <div class="feature-item">
-            <h3 class="bento-title">Standout Templates</h3>
-            <p class="text">Select from a range of sleek, ATS-optimized templates that catch recruiters' eyes.</p>
-          </div>
-          <div class="feature-item">
-            <h3 class="bento-title">Tailor to Perfection</h3>
-            <p class="text">Customize every detail to reflect your career journey and future ambitions.</p>
-          </div>
-          <div class="feature-item">
-            <h3 class="bento-title">Land Your Dream Job</h3>
-            <p class="text">Enhance your chances with a resume that truly makes you shine.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer bg-dark">
-    <div class="container text-center">
-      <p class="footer-content">© 2024 ResumeCraft. All rights reserved.</p>
-    </div>
+  <footer class="footer">
+    <p class="footer-content">© 2024 ResumeCraft. All rights reserved.</p>
   </footer>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKXP7Z3ZT5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MKXP7Z3ZT5');
-  </script>
 </body>
 </html>
