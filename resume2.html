@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,101 +8,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/main2.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .preview-sc, #input-form {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        #preview-sc {
+            flex: 1;
+            margin-right: 1rem;
+            padding: 1rem;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #input-form {
+            flex: 1;
+            margin-left: 1rem;
+            padding: 1rem;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2, h3 {
+            color: #00ffcc;
+        }
+
+        .preview-item-val {
+            margin: 0.5rem 0;
+        }
+
+        hr {
+            border: 1px solid #333;
+            margin: 1rem 0;
+        }
+
+        .input-container {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #ff007f;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff66b2;
+            transform: scale(1.05);
+        }
+
+        .print-btn {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .preview-sc, #input-form {
+                flex-direction: column;
+                margin: 0;
+            }
+
+            #preview-sc {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <section id="preview-sc" class="print_area">
-        <div class="container">
-            <div class="header">
-                <div class="preview-item preview-item-name">
-                    <h1 class="preview-item-val fw-6" id="fullname_dsp">Robert Henderson</h1>
+    <div class="container">
+        <div class="header">
+            <h1>Resume Craft</h1>
+        </div>
+
+        <section id="preview-sc" class="print_area">
+            <div class="container">
+                <div class="header">
+                    <div class="preview-item preview-item-name">
+                        <h1 class="preview-item-val fw-6" id="fullname_dsp">Robert Henderson</h1>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-item-val text-uppercase fw-6 ls-1" id="designation_dsp">President and CEO</span>
+                    </div>
+                    <p class="subheadline" id="subheadline_dsp">P&L up to $150M | Global Teams of 400+ | 130% Revenue Growth in 4 Years</p>
+                    <p class="contact-info" id="contact_dsp">City, State Zip | (555) 555-1234 | benhenderson@email.com | linkedin.com/in/your-name-here</p>
                 </div>
-                <div class="preview-item">
-                    <span class="preview-item-val text-uppercase fw-6 ls-1" id="designation_dsp">President and CEO</span>
-                </div>
-                <p class="subheadline" id="subheadline_dsp">P&L up to $150M | Global Teams of 400+ | 130% Revenue Growth in 4 Years</p>
-                <p class="contact-info" id="contact_dsp">City, State Zip | (555) 555-1234 | benhenderson@email.com | linkedin.com/in/your-name-here</p>
-            </div>
-            <hr>
-            <div class="summary" id="summary_dsp">
-                <ul>
-                    <li>Learn how to write bold executive summaries (examples and templates)</li>
-                    <li>Include your target job title, industry/space, years of experience, and specialties.</li>
-                    <li>Highlight key achievements or career themes</li>
-                </ul>
-            </div>
-            <hr>
-            <div class="professional-experience" id="experience_dsp">
-                <h2>Professional Experience</h2>
-                <div class="job">
-                    <h3>Company 6, Location • Job Title <span>MM/YYYY - Present</span></h3>
-                    <p>At the executive level, little attention should be paid to your day-to-day duties, work habits, or even hard skills. Instead, it’s all about results and impact. Under your leadership, what was the business able to achieve? What were your biggest initiatives? What bold moves did you make improve the company’s standing? How much did the business grow while you were in the position?</p>
+                <hr>
+                <div class="summary" id="summary_dsp">
                     <ul>
-                        <li>Learn more about creating powerful, concise executive accomplishments</li>
-                        <li>Numbers and results. Executive recruiters need to know you’re going to move the needle</li>
-                        <li>For example: “Added $32M in new profit over 3 years by developing differentiated product line which decreased service time 50% for end users.”</li>
+                        <li>Learn how to write bold executive summaries (examples and templates)</li>
+                        <li>Include your target job title, industry/space, years of experience, and specialties.</li>
+                        <li>Highlight key achievements or career themes</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="input-form">
-        <div class="container-input">
-            <h2>Resume Builder</h2>
-            <form id="resume-form">
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" required>
-
-                <label for="designation">Designation:</label>
-                <input type="text" id="designation" name="designation" required>
-
-                <label for="top-achievements">Top Achievements:</label>
-                <input type="text" id="achievement1" name="achievement1" placeholder="Achievement 1" required>
-                <input type="text" id="achievement2" name="achievement2" placeholder="Achievement 2" required>
-                <input type="text" id="achievement3" name="achievement3" placeholder="Achievement 3" required>
-
-                <label for="contact">Contact Info:</label>
-                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-                <input type="text" id="address" name="address" placeholder="Address" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn Profile" required>
-
-                <label for="summary">Executive Summary:</label>
-                <textarea id="summary" name="summary" required placeholder="Example: &#10;• Proven track record of driving revenue growth &#10;• Expert in project management and team leadership"></textarea>
-
-                <div id="experience-section">
-                    <h3>Professional Experience</h3>
-                    <div class="experience">
-                        <label for="company">Company Name:</label>
-                        <input type="text" class="company" name="company" required>
-
-                        <label for="location">Location:</label>
-                        <input type="text" class="location" name="location" required>
-
-                        <label for="job-title">Job Title:</label>
-                        <input type="text" class="job-title" name="job-title" required>
-
-                        <label for="start-date">Start Date:</label>
-                        <input type="date" class="start-date" name="start-date" required>
-
-                        <label for="end-date">End Date:</label>
-                        <input type="date" class="end-date" name="end-date" required>
-
-                        <label for="description">Description:</label>
-                        <textarea class="description" name="description" required></textarea>
+                <hr>
+                <div class="professional-experience" id="experience_dsp">
+                    <h2>Professional Experience</h2>
+                    <div class="job">
+                        <h3>Company 6, Location • Job Title <span>MM/YYYY - Present</span></h3>
+                        <p>At the executive level, little attention should be paid to your day-to-day duties, work habits, or even hard skills. Instead, it’s all about results and impact. Under your leadership, what was the business able to achieve? What were your biggest initiatives? What bold moves did you make improve the company’s standing? How much did the business grow while you were in the position?</p>
+                        <ul>
+                            <li>Learn more about creating powerful, concise executive accomplishments</li>
+                            <li>Numbers and results. Executive recruiters need to know you’re going to move the needle</li>
+                            <li>For example: “Added $32M in new profit over 3 years by developing differentiated product line which decreased service time 50% for end users.”</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <button type="button" id="add-experience">Add Another Experience</button>
-                <button type="submit">Generate Resume</button>
-            </form>
-        </div>
-    </section>
+        <section id="input-form">
+            <div class="container-input">
+                <h2>Resume Builder</h2>
+                <form id="resume-form">
+                    <div class="input-container">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
 
-    <section class="print-btn-sc">
-        <div class="container">
-            <button type="button" class="print-btn btn btn-primary" onclick="printCV()">Print CV</button>
-        </div>
-    </section>
+                    <div class="input-container">
+                        <label for="designation">Designation:</label>
+                        <input type="text" id="designation" name="designation" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="top-achievements">Top Achievements:</label>
+                        <input type="text" id="achievement1" name="achievement1" placeholder="Achievement 1" required>
+                        <input type="text" id="achievement2" name="achievement2" placeholder="Achievement 2" required>
+                        <input type="text" id="achievement3" name="achievement3" placeholder="Achievement 3" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="contact">Contact Info:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="text" id="address" name="address" placeholder="Address" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn Profile" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="summary">Executive Summary:</label>
+                        <textarea id="summary" name="summary" required placeholder="Example: &#10;• Proven track record of driving revenue growth &#10;• Expert in project management and team leadership"></textarea>
+                    </div>
+
+                    <div id="experience-section">
+                        <h3>Professional Experience</h3>
+                        <div class="experience">
+                            <label for="company">Company Name:</label>
+                            <input type="text" class="company" name="company" required>
+
+                            <label for="location">Location:</label>
+                            <input type="text" class="location" name="location" required>
+
+                            <label for="job-title">Job Title:</label>
+                            <input type="text" class="job-title" name="job-title" required>
+
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" class="start-date" name="start-date" required>
+
+                            <label for="end-date">End Date:</label>
+                            <input type="date" class="end-date" name="end-date" required>
+
+                            <label for="description">Description:</label>
+                            <textarea class="description" name="description" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="button" id="add-experience">Add Another Experience</button>
+                    <button type="submit">Generate Resume</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="print-btn-sc">
+            <div class="container">
+                <button type="button" class="print-btn btn btn-primary" onclick="printCV()">Print CV</button>
+            </div>
+        </section>
+    </div>
 
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
