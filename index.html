@@ -86,7 +86,8 @@
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, auto);
       gap: 2rem;
       padding: 0 2rem;
     }
@@ -106,13 +107,13 @@
     }
 
     .long-feature {
-      grid-column: span 1; /* For vertical long item */
-      grid-row: span 2; /* Spanning two rows */
+      grid-column: span 1; /* For the first box, spanning 1 column */
+      grid-row: span 3; /* Spanning 3 rows */
     }
 
     .wide-feature {
-      grid-column: span 2; /* For horizontal long item */
-      grid-row: span 1; /* Spanning one row */
+      grid-column: span 2; /* For the second box, spanning 2 columns */
+      grid-row: span 2; /* Spanning 2 rows */
     }
 
     .footer {
@@ -135,6 +136,7 @@
       color: #ffffff;
       height: 100%; /* Full height of the grid item */
     }
+
   </style>
 </head>
 <body>
@@ -176,7 +178,19 @@
         <p>Enhance your chances with a resume that truly makes you shine.</p>
       </div>
       <div class="image-placeholder">
-        <p>Image Placeholder</p> <!-- Placeholder for image -->
+        <p>Image Placeholder 1</p> <!-- Placeholder for image -->
+      </div>
+      <div class="image-placeholder">
+        <p>Image Placeholder 2</p> <!-- Placeholder for image -->
+      </div>
+      <div class="image-placeholder">
+        <p>Image Placeholder 3</p> <!-- Placeholder for image -->
+      </div>
+      <div class="image-placeholder">
+        <p>Image Placeholder 4</p> <!-- Placeholder for image -->
+      </div>
+      <div class="image-placeholder">
+        <p>Image Placeholder 5</p> <!-- Placeholder for image -->
       </div>
     </div>
   </section>
