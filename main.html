@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resumé buildr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #fafafa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        .cta-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.4s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: #f0f0f0;
+            border-radius: 4px;
+            opacity: 0.6;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="container">
+        <h1>resumé buildr</h1>
+        <p class="tagline">Craft your story. Land your dream job.</p>
+        <button class="cta-button" id="ctaButton">Start Building</button>
+    </div>
+
+    <script>
+        // Create floating background elements
+        const floatingElements = document.getElementById('floatingElements');
+        const shapes = [
+            { width: 60, height: 8 },
+            { width: 8, height: 60 },
+            { width: 30, height: 30 },
+            { width: 20, height: 20 },
+            { width: 40, height: 4 }
+        ];
+
+        for (let i = 0; i < 15; i++) {
+            const element = document.createElement('div');
+            element.className = 'floating-element';
+            
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            element.style.width = shape.width + 'px';
+            element.style.height = shape.height + 'px';
+            
+            element.style.left = Math.random() * 100 + '%';
+            element.style.top = Math.random() * 100 + '%';
+            
+            const duration = 3 + Math.random() * 4;
+            const delay = -Math.random() * 5;
+            
+            element.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+            
+            floatingElements.appendChild(element);
+        }
+
+        // Add button click effect
+        document.getElementById('ctaButton').addEventListener('click', () => {
+            window.location.href = 'template.html';
+        });
+
+    </script>
+</body>
+</html>
