@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resumé buildr - Student Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #fafafa;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 2000px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .input-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .preview-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .add-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .add-btn:hover {
+            background: #444;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Resume Preview Styles */
+        .resume-preview {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .resume-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-contact {
+            color: #666;
+        }
+
+        .resume-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.25rem;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 1rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .item-subheader {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: #444;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='template.html'">← Back</button>
+    <button class="download-btn" onclick="downloadResume()">Download PDF</button>
+
+    <div class="container">
+        <!-- Input Form Section -->
+        <div class="input-section">
+            <h2>Enter Your Information</h2>
+            
+            <!-- Personal Information -->
+            <div class="section-title">Personal Information</div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="e.g., John Doe" oninput="updateResume()">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="e.g., john@example.com" oninput="updateResume()">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="phone" placeholder="e.g., (555) 123-4567" oninput="updateResume()">
+            </div>
+            <div class="form-group">
+                <label>LinkedIn</label>
+                <input type="url" id="linkedin" placeholder="e.g., linkedin.com/in/johndoe" oninput="updateResume()">
+            </div>
+
+            <!-- Education -->
+            <div class="section-title">Education</div>
+            <div id="educationInputs">
+                <div class="form-group education-input">
+                    <label>University Name</label>
+                    <input type="text" class="university" placeholder="e.g., State University" oninput="updateResume()">
+                    <label>Degree</label>
+                    <input type="text" class="degree" placeholder="e.g., Bachelor of Science in Computer Science" oninput="updateResume()">
+                    <label>Graduation Date</label>
+                    <input type="text" class="gradDate" placeholder="e.g., May 2024" oninput="updateResume()">
+                    <label>GPA</label>
+                    <input type="text" class="gpa" placeholder="e.g., 3.8/4.0" oninput="updateResume()">
+                </div>
+            </div>
+            <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+
+            <!-- Skills -->
+            <div class="section-title">Skills</div>
+            <div class="form-group">
+                <label>Technical Skills (comma-separated)</label>
+                <textarea id="skills" placeholder="e.g., Python, Java, HTML, CSS, JavaScript" oninput="updateResume()"></textarea>
+            </div>
+
+            <!-- Projects -->
+            <div class="section-title">Projects</div>
+            <div id="projectInputs">
+                <div class="form-group project-input">
+                    <label>Project Name</label>
+                    <input type="text" class="projectName" placeholder="e.g., E-commerce Website" oninput="updateResume()">
+                    <label>Technologies Used</label>
+                    <input type="text" class="projectTech" placeholder="e.g., React, Node.js, MongoDB" oninput="updateResume()">
+                    <label>Description</label>
+                    <textarea class="projectDesc" placeholder="Describe your project and its impact" oninput="updateResume()"></textarea>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addProject()">+ Add Project</button>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>Resume Preview</h2>
+            <div class="resume-preview" id="resumePreview">
+                <!-- Preview content will be dynamically updated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateResume() {
+            const preview = document.getElementById('resumePreview');
+            const name = document.getElementById('fullName').value || 'Your Name';
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const linkedin = document.getElementById('linkedin').value;
+            
+            // Build resume HTML
+            let resumeHTML = `
+                <div class="resume-header">
+                    <div class="resume-name">${name}</div>
+                    <div class="resume-contact">
+                        ${email ? email + ' | ' : ''}
+                        ${phone ? phone + ' | ' : ''}
+                        ${linkedin ? linkedin : ''}
+                    </div>
+                </div>
+            `;
+
+            // Education Section
+            resumeHTML += `
+                <div class="resume-section">
+                    <div class="resume-section-title">Education</div>
+            `;
+            
+            document.querySelectorAll('.education-input').forEach(edu => {
+                const university = edu.querySelector('.university').value;
+                const degree = edu.querySelector('.degree').value;
+                const gradDate = edu.querySelector('.gradDate').value;
+                const gpa = edu.querySelector('.gpa').value;
+                
+                if (university || degree) {
+                    resumeHTML += `
+                        <div class="education-item">
+                            <div class="item-header">
+                                <span>${university}</span>
+                                <span>${gradDate}</span>
+                            </div>
+                            <div class="item-subheader">${degree}${gpa ? ` | GPA: ${gpa}` : ''}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            resumeHTML += `</div>`;
+
+            // Skills Section
+            const skills = document.getElementById('skills').value;
+            if (skills) {
+                resumeHTML += `
+                    <div class="resume-section">
+                        <div class="resume-section-title">Skills</div>
+                        <div class="skills-list">
+                            ${skills.split(',').map(skill => 
+                                `<span class="skill-item">${skill.trim()}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Projects Section
+            resumeHTML += `
+                <div class="resume-section">
+                    <div class="resume-section-title">Projects</div>
+            `;
+            
+            document.querySelectorAll('.project-input').forEach(proj => {
+                const name = proj.querySelector('.projectName').value;
+                const tech = proj.querySelector('.projectTech').value;
+                const desc = proj.querySelector('.projectDesc').value;
+                
+                if (name || desc) {
+                    resumeHTML += `
+                        <div class="project-item">
+                            <div class="item-header">${name}</div>
+                            ${tech ? `<div class="item-subheader">Technologies: ${tech}</div>` : ''}
+                            <div>${desc}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            resumeHTML += `</div>`;
+
+            preview.innerHTML = resumeHTML;
+        }
+
+        function addEducation() {
+            const container = document.getElementById('educationInputs');
+            const newEducation = document.createElement('div');
+            newEducation.className = 'form-group education-input';
+            newEducation.innerHTML = `
+                <label>University Name</label>
+                <input type="text" class="university" placeholder="e.g., State University" oninput="updateResume()">
+                <label>Degree</label>
+                <input type="text" class="degree" placeholder="e.g., Bachelor of Science in Computer Science" oninput="updateResume()">
+                <label>Graduation Date</label>
+                <input type="text" class="gradDate" placeholder="e.g., May 2024" oninput="updateResume()">
+                <label>GPA</label>
+                <input type="text" class="gpa" placeholder="e.g., 3.8/4.0" oninput="updateResume()">
+                <button class="remove-btn" onclick="this.parentElement.remove(); updateResume()">Remove</button>
+            `;
+            container.appendChild(newEducation);
+        }
+
+        function addProject() {
+            const container = document.getElementById('projectInputs');
+            const newProject = document.createElement('div');
+            newProject.className = 'form-group project-input';
+            newProject.innerHTML = `
+                <label>Project Name</label>
+                <input type="text" class="projectName" placeholder="e.g., E-commerce Website" oninput="updateResume()">
+                <label>Technologies Used</label>
+                <input type="text" class="projectTech" placeholder="e.g., React, Node.js, MongoDB" oninput="updateResume()">
+                <label>Description</label>
+                <textarea class="projectDesc" placeholder="Describe your project and its impact" oninput="updateResume()"></textarea>
+                <button class="remove-btn" onclick="this.parentElement.remove(); updateResume()">Remove</button>
+            `;
+            container.appendChild(newProject);
+        }
+
+        function downloadResume() {
+            alert('Download functionality would be implemented here. This would typically convert the resume to PDF format.');
+        }
+
+        // Initialize the preview
+        updateResume();
+    </script>
+</body>
+</html>
