@@ -3,156 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resumé buildr - ATS Templates</title>
+    <title>Resumé Builder - ATS Templates</title>
     <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #f1f3f4;
+            --text: #202124;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --success: #34c759;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background: #fafafa;
+            background: var(--secondary);
             min-height: 100vh;
-            padding: 2rem;
-            color: #333;
+            padding: 3rem;
+            color: var(--text);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .templates-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 3rem;
-            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
         }
 
         .template-card {
             background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
         .template-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
         .template-preview {
             background: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 2rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .preview-content {
-            opacity: 0.8;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            overflow: hidden;
         }
 
         .template-name {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .template-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            color: #5f6368;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
         .template-features {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .feature {
             display: flex;
             align-items: center;
-            margin-bottom: 0.5rem;
-            color: #555;
+            margin-bottom: 0.75rem;
+            color: #5f6368;
         }
 
         .feature::before {
             content: "✓";
-            color: #28a745;
-            margin-right: 0.5rem;
+            color: var(--success);
+            margin-right: 0.75rem;
             font-weight: bold;
         }
 
         .use-template-btn {
-            background: #333;
+            background: var(--primary);
             color: white;
             border: none;
             padding: 1rem 2rem;
-            border-radius: 30px;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
         .use-template-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #1557b0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .back-button {
             position: fixed;
             top: 2rem;
             left: 2rem;
-            background: #333;
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .back-button:hover {
+            background: #1557b0;
             transform: translateX(-5px);
         }
 
         .ats-badge {
-            background: #e8f5e9;
-            color: #2e7d32;
-            padding: 0.25rem 0.75rem;
+            background: #e8f0fe;
+            color: #174ea6;
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
-            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+            }
+
+            .templates-container {
+                grid-template-columns: 1fr;
+            }
+
+            .template-card {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+    <button class="back-button" onclick="window.location.href='index.html'" aria-label="Back to home">← Back</button>
     
-    <div class="header">
+    <header class="header">
         <h1>ATS-Optimized Resume Templates</h1>
-        <p>Choose the perfect template for your experience level</p>
-    </div>
+        <p>Choose a template tailored to your career stage</p>
+    </header>
 
-    <div class="templates-container">
+    <main class="templates-container">
         <!-- Fresh Graduate Template -->
-        <div class="template-card" id="freshGradTemplate">
+        <section class="template-card" id="freshGradTemplate">
             <span class="ats-badge">ATS-Friendly</span>
-            <div class="template-preview">
+            <div class="template-preview" role="region" aria-label="Fresh Graduate Template Preview">
                 <div class="preview-content">
                     <strong>JANE DOE</strong><br>
                     Computer Science Graduate<br><br>
@@ -166,20 +194,20 @@
                 </div>
             </div>
             <h3 class="template-name">Fresh Graduate Template</h3>
-            <p class="template-description">Optimized for recent graduates to highlight academic achievements, projects, and internships.</p>
+            <p class="template-description">Ideal for recent graduates to showcase academic achievements, projects, and internships.</p>
             <div class="template-features">
                 <div class="feature">Emphasizes educational background</div>
                 <div class="feature">Highlights relevant coursework</div>
                 <div class="feature">Showcases academic projects</div>
                 <div class="feature">Space for internships and part-time work</div>
             </div>
-            <button class="use-template-btn" onclick="selectTemplate('fresh')">Use This Template</button>
-        </div>
+            <button class="use-template-btn" onclick="selectTemplate('fresh')" aria-label="Select Fresh Graduate Template">Use This Template</button>
+        </section>
 
         <!-- Experienced Professional Template -->
-        <div class="template-card" id="experiencedTemplate">
+        <section class="template-card" id="experiencedTemplate">
             <span class="ats-badge">ATS-Friendly</span>
-            <div class="template-preview">
+            <div class="template-preview" role="region" aria-label="Experienced Professional Template Preview">
                 <div class="preview-content">
                     <strong>JOHN SMITH</strong><br>
                     Senior Software Engineer<br><br>
@@ -191,37 +219,73 @@
                 </div>
             </div>
             <h3 class="template-name">Experienced Professional Template</h3>
-            <p class="template-description">Designed for professionals with work experience to showcase career progression and achievements.</p>
+            <p class="template-description">Perfect for professionals to highlight career progression and key achievements.</p>
             <div class="template-features">
                 <div class="feature">Emphasizes work experience</div>
                 <div class="feature">Highlights key achievements</div>
                 <div class="feature">Space for professional certifications</div>
                 <div class="feature">Leadership and management focus</div>
             </div>
-            <button class="use-template-btn" onclick="selectTemplate('experienced')">Use This Template</button>
-        </div>
-    </div>
+            <button class="use-template-btn" onclick="selectTemplate('experienced')" aria-label="Select Experienced Professional Template">Use This Template</button>
+        </section>
+
+        <!-- Career Changer Template -->
+        <section class="template-card" id="careerChangerTemplate">
+            <span class="ats-badge">ATS-Friendly</span>
+            <div class="template-preview" role="region" aria-label="Career Changer Template Preview">
+                <div class="preview-content">
+                    <strong>ALEX BROWN</strong><br>
+                    Transitioning to Data Analysis<br><br>
+                    TRANSFERABLE SKILLS<br>
+                    Project Management, Data Interpretation...<br><br>
+                    EXPERIENCE<br>
+                    Marketing Manager | 2017-2024<br><br>
+                    CERTIFICATIONS<br>
+                    Data Analytics Certificate...
+                </div>
+            </div>
+            <h3 class="template-name">Career Changer Template</h3>
+            <p class="template-description">Designed for professionals transitioning to a new field, emphasizing transferable skills.</p>
+            <div class="template-features">
+                <div class="feature">Highlights transferable skills</div>
+                <div class="feature">Showcases relevant certifications</div>
+                <div class="feature">Emphasizes adaptability</div>
+                <div class="feature">Blends past and new career paths</div>
+            </div>
+            <button class="use-template-btn" onclick="selectTemplate('careerChanger')" aria-label="Select Career Changer Template">Use This Template</button>
+        </section>
+    </main>
 
     <script>
         function selectTemplate(type) {
-            // Store the selected template type
-            localStorage.setItem('selectedTemplate', type);
-            
-            // Show selection confirmation
-            open(`Selected the ${type === 'fresh' ? window.location.href = 'template1.html' : window.location.href = 'template2.html'} template! opening...`);
-            
-
+            try {
+                localStorage.setItem('selectedTemplate', type);
+                const url = type === 'fresh' ? 'template1.html' :
+                           type === 'experienced' ? 'template2.html' : 'template3.html';
+                window.location.href = url;
+            } catch (error) {
+                console.error('Error selecting template:', error);
+                alert('Failed to select template. Please try again.');
+            }
         }
 
-        // Add hover effect to show more detail
+        // Preview hover effect
         document.querySelectorAll('.template-preview').forEach(preview => {
             preview.addEventListener('mouseover', () => {
-                preview.style.transform = 'scale(1.02)';
+                preview.style.transform = 'scale(1.03)';
                 preview.style.transition = 'transform 0.3s ease';
             });
-            
             preview.addEventListener('mouseout', () => {
                 preview.style.transform = 'scale(1)';
+            });
+        });
+
+        // Keyboard accessibility for buttons
+        document.querySelectorAll('.use-template-btn, .back-button').forEach(button => {
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    button.click();
+                }
             });
         });
     </script>
